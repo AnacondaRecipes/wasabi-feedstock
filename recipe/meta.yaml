@@ -1,6 +1,6 @@
 {% set name = "wasabi" %}
-{% set version = "0.8.2" %}
-{% set sha256sum = "b4a36aaa9ca3a151f0c558f269d442afbb3526f0160fd541acd8a0d5e5712054" %}
+{% set version = "0.9.1" %}
+{% set sha256sum = "ada6f13e9b70ef26bf95fad0febdfdebe2005e29a08ad58f4bbae383a97298cf" %}
 
 package:
   name: {{ name|lower }}
@@ -9,8 +9,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
+
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -18,15 +18,19 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
   run:
     - python
 
 test:
   requires:
-    - pytest <4
+    - pip 
+    - pytest
   imports:
     - {{ name }}
   commands:
+    - pip check
     - python -m pytest --tb=native --pyargs {{ name }}
 
 
@@ -38,7 +42,7 @@ about:
   summary: A lightweight console printing and formatting toolkit
 
   dev_url: https://github.com/ines/wasabi
-  doc_url: https://github.com/ines/wasabi#-api
+  doc_url: https://github.com/ines/wasabi/blob/master/README.md
 
 extra:
   recipe-maintainers:
