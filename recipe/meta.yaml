@@ -39,7 +39,7 @@ test:
     - pytest
 
 about:
-  home: http://github.com/ines/wasabi
+  home: https://github.com/ines/wasabi
   license: MIT
   license_family: MIT
   license_file: LICENSE
