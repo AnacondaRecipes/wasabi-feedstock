@@ -44,10 +44,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: A lightweight console printing and formatting toolkit
-  description: | 
-    Over the years, I've written countless implementations of coloring and formatting utilities
-    to output messages in our libraries like spaCy, Thinc and Prodigy. While there are many other
-    great open-source options, I've always ended up wanting something slightly different or slightly custom.
+  description: A lightweight console printing and formatting toolkit
   dev_url: https://github.com/ines/wasabi
   doc_url: https://github.com/ines/wasabi/blob/master/README.md
 
